@@ -1,0 +1,116 @@
+body{
+    background: rgba(124, 96, 59, 0.33);
+    font-family: 'Oswald',sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.5em;
+}
+/* inicio menu */
+.inner_main_menu{
+    margin: 0 auto;
+    width: 1170px;
+}
+.inner_main_menu ul{
+    margin: 0;
+    padding: 80px 0 0;
+    list-style: none;
+    text-align: right;
+}
+.inner_main_menu ul li{
+    float: none;
+    display: inline-block;
+}
+.inner_main_menu ul li:nth-child(1){
+    float: left;
+}
+.inner_main_menu ul li:nth-child(2){
+    float: left;
+}
+.inner_main_menu ul li:nth-child(3){
+    float: left;
+}
+.inner_main_menu ul li a{
+    color: #262626;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: block;
+    padding: 10px 20px;
+}
+.inner_main_menu ul li a:hover{
+    color: #6a37ac;
+}
+#main_menu{
+    width: 100%;
+    position: relative;
+}
+.logo_area{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    content: "";
+    margin-left: -150px;
+    text-align: center;
+}
+/* fim menu */
+.container{
+    width: 1280px;
+    min-height: 500px;
+    margin: 70px auto 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.container .box{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background: #ff0;
+    margin:10px;
+    box-sizing: border-box;
+    display: inline-block;
+}
+.container .box .imgBox{
+    position: relative;
+    overflow: hidden;
+}
+.container .box .imgBox img{
+    max-width: 100%;
+    transition: transform 2s;
+}
+.container .box:hover .imgBox img{
+    transform: scale(1.2);
+}
+.container .box .details{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0,0,0,.8);
+    transform: scaleY(0);
+    transition: transform .5s;
+}
+.container .box:hover .details{
+    transform: scaleY(1);
+}
+.container .box .details .content{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    padding: 15px;
+    color: #fff;
+}
+.container .box .details .content h2{
+    margin:0;
+    padding: 0;
+    font-size: 20px;
+    color: rgb(185, 125, 34);
+}
+.container .box .details .content p{
+    margin:10px 0 0;
+    padding: 0;
+}
