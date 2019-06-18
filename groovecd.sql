@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: 17-Jun-2019 às 00:16
+-- Generation Time: 18-Jun-2019 às 04:54
 -- Versão do servidor: 5.7.26
 -- versão do PHP: 7.2.18
 
@@ -35,7 +35,14 @@ CREATE TABLE IF NOT EXISTS `admin` (
   `login` varchar(20) NOT NULL,
   `senha` varchar(32) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `admin`
+--
+
+INSERT INTO `admin` (`id`, `nome`, `login`, `senha`) VALUES
+(1, 'Higor', 'higuin', 'e4062cb706430cc1c7e14ef1aaeea4ff');
 
 -- --------------------------------------------------------
 
@@ -63,7 +70,16 @@ CREATE TABLE IF NOT EXISTS `cd` (
   `preco` varchar(10) NOT NULL,
   `genero` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `cd`
+--
+
+INSERT INTO `cd` (`id`, `titulo`, `preco`, `genero`) VALUES
+(1, 'Sorriso Maroto', 'R$ 20,00', 'Romance'),
+(2, 'Pericles', 'R$ 30,00', 'Pagode'),
+(3, 'Maroon 5', 'R$ 100,00', 'Rock');
 
 -- --------------------------------------------------------
 
@@ -81,7 +97,16 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   `login` varchar(20) NOT NULL,
   `senha` varchar(32) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `cliente`
+--
+
+INSERT INTO `cliente` (`id`, `nome`, `email`, `cpf`, `telefone`, `login`, `senha`) VALUES
+(2, 'Nathan', 'nathan@gmail.com', '154.878.878-78', '(84) 84548-4548', 'nathan', '9db74df32b6cc2ac52be584bf279972b'),
+(3, 'Chico Tripa', 'chiquin@gmail.com', '154.878.878-78', '(84) 84548-4548', 'chiquin', '8a7c668215609ff03d8d9d1a302361fc'),
+(4, 'Kamylla', 'kamylla@gmail.com', '234.877.345-12', '(84) 45784-4548', 'kamylla', 'a6d1c9db00df7b0f7b61ae65641856af');
 
 -- --------------------------------------------------------
 

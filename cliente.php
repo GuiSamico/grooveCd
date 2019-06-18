@@ -10,21 +10,7 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <div id="main_menu">
-        <div class="logo_area">
-            <a href="#"><img src="img/logo.png"></a>
-        </div>
-        <div class="inner_main_menu">
-            <ul>
-                <li><a href="login-admin.php">Administrador</a></li>
-                <li><a href="login-cliente.php">Login</a></li>
-                <li><a href="cadastro-cli">Cadastro</a></li>
-                <li><a href="" onclick="return alert('Faça login para mais recursos!')">Música</a></li>
-                <li><a href="" onclick="return alert('Faça login para mais recursos!')">Artista</a></li>
-                <li><a href="" onclick="return alert('Faça login para mais recursos!')">Gênero</a></li>
-            </ul>
-        </div>
-    </div>
+
     <h1 style="margin-top:140px; margin-left:50px; margin-bottom:-30px;">Principais faixas de cada gênero</h1>
     <div class="container">
         <div class="box">
@@ -35,6 +21,7 @@
                 <div class="content">
                     <h2>Aline Barros</h2>
                     <p>Ressucita-me</p>
+                    <p><button type="button" name="button">Comprar</button> </p>
                     <audio controls style="width:250px; position:relative; top:50px;">
                         <source src="audio/ressuscita-me.mp3" type="audio/mpeg">
                     </audio>
@@ -49,6 +36,7 @@
                 <div class="content">
                     <h2>Amy Winehouse</h2>
                     <p>Back to black</p>
+                    <p><button type="button" name="button">Comprar</button> </p>
                     <audio controls style="width:250px; position:relative; top:50px;">
                         <source src="audio/back-to-black.mp3" type="audio/mpeg">
                     </audio>
@@ -63,6 +51,7 @@
                 <div class="content">
                     <h2>Beethoven</h2>
                     <p>Fur elise</p>
+                    <p><button type="button" name="button">Comprar</button> </p>
                     <audio controls style="width:250px; position:relative; top:50px;">
                         <source src="audio/fur-elise.mp3" type="audio/mpeg">
                     </audio>
@@ -77,6 +66,7 @@
                 <div class="content">
                     <h2>Belo</h2>
                     <p>Tudo mudou</p>
+                    <p><button type="button" name="button">Comprar</button> </p>
                     <audio controls style="width:250px; position:relative; top:50px;">
                         <source src="audio/tudo-mudou.mp3" type="audio/mpeg">
                     </audio>
@@ -91,6 +81,7 @@
                 <div class="content">
                     <h2>Bob Marley</h2>
                     <p>Is this love</p>
+                    <p><button type="button" name="button">Comprar</button> </p>
                     <audio controls style="width:250px; position:relative; top:50px;">
                         <source src="audio/is-this-love.mp3" type="audio/mpeg">
                     </audio>
@@ -105,6 +96,7 @@
                 <div class="content">
                     <h2>Bruno Mars</h2>
                     <p>Just the way you are</p>
+                    <p><button type="button" name="button">Comprar</button> </p>
                     <audio controls style="width:250px; position:relative; top:50px;">
                         <source src="audio/just-the-way-you-are.mp3" type="audio/mpeg">
                     </audio>
@@ -119,6 +111,7 @@
                 <div class="content">
                     <h2>Ed Sheeran</h2>
                     <p>Perfect</p>
+                    <p><button type="button" name="button">Comprar</button> </p>
                     <audio controls style="width:250px; position:relative; top:50px;">
                         <source src="audio/perfect.mp3" type="audio/mpeg">
                     </audio>
@@ -133,6 +126,7 @@
                 <div class="content">
                     <h2>Eminem</h2>
                     <p>Rap god</p>
+                    <p><button type="button" name="button">Comprar</button> </p>
                     <audio controls style="width:250px; position:relative; top:50px;">
                         <source src="audio/rap-god.mp3" type="audio/mpeg">
                     </audio>
@@ -147,6 +141,7 @@
                 <div class="content">
                     <h2>Marilia Mendoça</h2>
                     <p>Ausência</p>
+                    <p><button type="button" name="button">Comprar</button> </p>
                     <audio controls style="width:250px; position:relative; top:50px;">
                         <source src="audio/ausencia.mp3" type="audio/mpeg">
                     </audio>
@@ -161,6 +156,7 @@
                 <div class="content">
                     <h2>Marshmallo</h2>
                     <p>Alone</p>
+                    <p><button type="button" name="button">Comprar</button> </p>
                     <audio controls style="width:250px; position:relative; top:50px;">
                         <source src="audio/alone.mp3" type="audio/mpeg">
                     </audio>
@@ -175,6 +171,7 @@
                 <div class="content">
                     <h2>Queen</h2>
                     <p>Bohemian rhapsody</p>
+                    <p><button type="button" name="button">Comprar</button> </p>
                     <audio controls style="width:250px; position:relative; top:50px;">
                         <source src="audio/bohemian-rhapsody.mp3" type="audio/mpeg">
                     </audio>
@@ -189,6 +186,7 @@
                 <div class="content">
                     <h2>Xand Avião</h2>
                     <p>Sábado à noite</p>
+                    <p><button type="button" name="button">Comprar</button> </p>
                     <audio controls style="width:250px; position:relative; top:50px;">
                         <source src="audio/sabado-a-noite.mp3" type="audio/mpeg">
                     </audio>
