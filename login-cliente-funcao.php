@@ -13,12 +13,12 @@
 
     if($row == 1){
         $_SESSION['logado'] = true;
-        $_SESSION['usuario'] = $login;
+        $_SESSION['login'] = $login;
         header('location:cliente.php');
         exit();
     }else{
         $_SESSION['nao_autenticado'] = true;
-        header('location:login-admin.php');
+        header('location:login-cliente.php');
         exit();
     }
 ?>

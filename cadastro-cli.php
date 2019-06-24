@@ -3,7 +3,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Med Center - Cadastro</title>
+    <title>Groove CD - Cadastro</title>
     <link rel="shortcut icon" href="img/favicon.png">
     <script src="jquery/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

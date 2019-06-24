@@ -13,7 +13,7 @@
 
     if($row == 1){
         $_SESSION['logado'] = true;
-        $_SESSION['usuario'] = $usuario;
+        $_SESSION['login'] = $login;
         header('location:admin.php');
         exit();
     }else{

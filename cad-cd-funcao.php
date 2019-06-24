@@ -1,14 +1,14 @@
 <?php
     require_once 'conexao.php';
 
-    $titulo = mysqli_escape_string($conn,$_POST['titulo']);
+    $artista = mysqli_escape_string($conn,$_POST['artista']);
     $preco = mysqli_escape_string($conn,$_POST['preco']);
     $genero = mysqli_escape_string($conn,$_POST['genero']);
 
 
-    $sql = "INSERT INTO cd (titulo, preco, genero)";
+    $sql = "INSERT INTO cd (artista, preco, genero)";
     $sql.= "values";
-    $sql.= "('$titulo','$preco','$genero');";
+    $sql.= "('$artista','$preco','$genero');";
 
     mysqli_query($conn,$sql);
 

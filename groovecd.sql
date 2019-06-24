@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: 18-Jun-2019 às 04:54
+-- Generation Time: 24-Jun-2019 às 01:55
 -- Versão do servidor: 5.7.26
 -- versão do PHP: 7.2.18
 
@@ -66,20 +66,25 @@ CREATE TABLE IF NOT EXISTS `artista` (
 DROP TABLE IF EXISTS `cd`;
 CREATE TABLE IF NOT EXISTS `cd` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `titulo` varchar(20) NOT NULL,
-  `preco` varchar(10) NOT NULL,
+  `artista` varchar(20) NOT NULL,
+  `preco` decimal(5,2) NOT NULL,
   `genero` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `cd`
 --
 
-INSERT INTO `cd` (`id`, `titulo`, `preco`, `genero`) VALUES
-(1, 'Sorriso Maroto', 'R$ 20,00', 'Romance'),
-(2, 'Pericles', 'R$ 30,00', 'Pagode'),
-(3, 'Maroon 5', 'R$ 100,00', 'Rock');
+INSERT INTO `cd` (`id`, `artista`, `preco`, `genero`) VALUES
+(5, 'Ze Neto e Cristiano', '10.00', 'Sertanejo'),
+(6, 'Thiago Matheus', '10.00', 'Sertanejo'),
+(7, 'Melim', '10.00', 'Romance'),
+(8, 'Jorge e Mateus', '10.00', 'Sertanejo'),
+(9, 'Legiao Urbana', '15.00', 'Rock'),
+(10, 'Racionais Mc\'s', '15.00', 'Rap'),
+(11, 'Ferrugem', '10.00', 'Pagode'),
+(12, 'Alok', '15.00', 'Eletronica');
 
 -- --------------------------------------------------------
 
@@ -105,7 +110,6 @@ CREATE TABLE IF NOT EXISTS `cliente` (
 
 INSERT INTO `cliente` (`id`, `nome`, `email`, `cpf`, `telefone`, `login`, `senha`) VALUES
 (2, 'Nathan', 'nathan@gmail.com', '154.878.878-78', '(84) 84548-4548', 'nathan', '9db74df32b6cc2ac52be584bf279972b'),
-(3, 'Chico Tripa', 'chiquin@gmail.com', '154.878.878-78', '(84) 84548-4548', 'chiquin', '8a7c668215609ff03d8d9d1a302361fc'),
 (4, 'Kamylla', 'kamylla@gmail.com', '234.877.345-12', '(84) 45784-4548', 'kamylla', 'a6d1c9db00df7b0f7b61ae65641856af');
 
 -- --------------------------------------------------------
@@ -123,7 +127,19 @@ CREATE TABLE IF NOT EXISTS `compra` (
   `cpfCliente` varchar(15) NOT NULL,
   `tituloCd` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `compra`
+--
+
+INSERT INTO `compra` (`id`, `formaPagamento`, `endereco`, `valorTotal`, `cpfCliente`, `tituloCd`) VALUES
+(1, 'dinheiro', 'Rua Alves de Lima', '10.00', '154.878.878-78', 'Ze Neto e Cristiano'),
+(2, 'boleto', 'Rua Alves de Lima', '10.00', '154.878.878-78', 'Thiago Matheus'),
+(3, 'cartao', 'Rua Alves de Lima', '10.00', '154.878.878-78', 'Melim'),
+(4, 'dinheiro', 'Rua Alves de Lima', '15.00', '154.878.878-78', 'Alok'),
+(5, 'dinheiro', 'Rua Alves de Lima', '15.00', '154.878.878-78', 'Racionais Mc\'s'),
+(6, 'cartao', 'Dona Mendina', '15.00', '154.878.878-78', 'Legiao Urbana');
 
 -- --------------------------------------------------------
 
@@ -135,6 +151,20 @@ DROP TABLE IF EXISTS `musica`;
 CREATE TABLE IF NOT EXISTS `musica` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `pedidos`
+--
+
+DROP TABLE IF EXISTS `pedidos`;
+CREATE TABLE IF NOT EXISTS `pedidos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `cd` varchar(30) NOT NULL,
+  `artista` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 COMMIT;
