@@ -5,6 +5,7 @@
         header('location:index.php');
     endif;
     $cpfCliente = $_GET['cpf'];
+    $idcliente = $_GET['idcliente'];
 ?>
 
 <!DOCTYPE html>
@@ -33,8 +34,8 @@
                     "infoEmpty": "Nenhum registro disponível",
                     "infoFiltered": "(filtrado de _MAX_ registros no total)",
                     "paginate":{
-                        "next": "<img src='img/seta-d.png'>",
-                        "previous": "<img src='img/seta-e.png'>"
+                        "next": "proximo",
+                        "previous": "anterior"
                     },
                     "search": "Filtrar"
                 }
@@ -43,14 +44,16 @@
     </script>
 </head>
 <body>
-    <div class="container">
-        <h2>Minhas Compras</h2>
+    <a href="javascript:history.back()" style="color:black;text-decoration:none; position:relative;top:50px; left:30px;"><button style=" font-size:15px;">Voltar</button></a>
+    <div class="container3">
+        <h2 style="margin-top:100px;">Minhas Compras</h2>
         <table id="tabela" class="table table-bordered table-hover">
             <thead>
                 <tr class="th">
                     <th>CD</th>
                     <th>Valor</th>
                     <th>Forma de Pagamento</th>
+                    <th>Emitir boleto</th>
                 </tr>
             </thead>
             <tbody>
@@ -61,11 +64,12 @@
                 ?>
                 <tr>
                     <?php
-                        $id = $row['id'];
+                        $idcompra = $row['id'];
                     ?>
                     <td><?php echo utf8_encode($row['tituloCd'])?></td>
                     <td><?php echo utf8_encode($row['valorTotal'])?></td>
                     <td><?php echo $row['formaPagamento']?></td>
+                    <td><a href="#" onclick="window.open('boletos/boleto_bradesco.php?idcompra=<?php echo $idcompra?>&idcliente=<?php echo $idcliente?>','mywindow','location=1,status=1,scrollbars=1,width=750,height=500');"><img src="img/boleto.png" width="30px;"></td></a>
                 </tr>
                 <?php
                     endwhile;

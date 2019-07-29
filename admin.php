@@ -18,6 +18,7 @@
     <script src="jquery/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="jquery/ajax.js"></script>
+    <script src="jquery/jquery.maskedinput.min.js"></script>
     <link rel="stylesheet" href="css/datatable.css">
     <script src="js/datatable.js"></script>
     <link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
@@ -32,59 +33,68 @@
                     "infoEmpty": "Nenhum registro disponível",
                     "infoFiltered": "(filtrado de _MAX_ registros no total)",
                     "paginate":{
-                        "next": "<img src='img/seta-d.png'>",
-                        "previous": "<img src='img/seta-e.png'>"
+                        "next": "proximo",
+                        "previous": "anterior"
                     },
                     "search": "Filtrar"
                 }
             });
+
+            jQuery("#preco").mask("99.99");
         });
     </script>
 </head>
 <body>
     <div class="container">
         <a href="logout.php" style="color:black;text-decoration:none; position:relative;top:-50px; left:-70px;"><button>Logout</button></a>
-        <h2>Clientes</h2>
-        <table id="tabela" class="table table-bordered table-hover">
-            <thead>
-                <tr class="th">
-                    <th>Nome</th>
-                    <th>Email</th>
-                    <th>CPF</th>
-                    <th>Telefone</th>
-                    <th>Excluir</th>
 
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                    $sql = "SELECT * FROM cliente";
-                    $resultado = mysqli_query($conn, $sql);
-                    while($row = mysqli_fetch_array($resultado)):
-                ?>
-                <tr>
+        <a href="list_compras.php" style="color:black;text-decoration:none; position:relative;top:-50px; left:1030px;"><button>Compras</button></a>
+
+        <h2 style="position:relative;left:50px;">Clientes</h2>
+
+        <div class="tabv" style="position:relative;top:80px;left:-50px;margin-bottom:100px;">
+            <table id="tabela" class="table table-bordered table-hover">
+                <thead>
+                    <tr class="th">
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>CPF</th>
+                        <th>Telefone</th>
+                        <th>Excluir</th>
+
+                    </tr>
+                </thead>
+                <tbody>
                     <?php
-                        $id = $row['id'];
+                        $sql = "SELECT * FROM cliente";
+                        $resultado = mysqli_query($conn, $sql);
+                        while($row = mysqli_fetch_array($resultado)):
                     ?>
-                    <td><?php echo utf8_encode($row['nome'])?></td>
-                    <td><?php echo utf8_encode($row['email'])?></td>
-                    <td><?php echo $row['cpf']?></td>
-                    <td><?php echo $row['telefone']?></td>
-                    <td><a href="excluir-cliente.php?id=<?php echo $id?>" onclick="return confirm('Tem certeza?');"><img width="40px;" src="img/iconexcluir.png" class="iconop"></a></td>
-                </tr>
-                <?php
-                    endwhile;
-                ?>
-            </tbody>
-        </table>
+                    <tr>
+                        <?php
+                            $id = $row['id'];
+                        ?>
+                        <td><?php echo utf8_encode($row['nome'])?></td>
+                        <td><?php echo utf8_encode($row['email'])?></td>
+                        <td><?php echo $row['cpf']?></td>
+                        <td><?php echo $row['telefone']?></td>
+                        <td><a href="excluir-cliente.php?id=<?php echo $id?>" onclick="return confirm('Tem certeza?');"><img width="40px;" src="img/iconexcluir.png" class="iconop"></a></td>
+                    </tr>
+                    <?php
+                        endwhile;
+                    ?>
+                </tbody>
+            </table>
+        </div>
 
 
-        <div id="cd" style="position:relative;left:250px;top:50px;">
+
+        <div id="cd" style="position:relative;left:350px;top:50px;">
             <h3>Cadastrar CD</h3>
             <form class="" action="cad-cd-funcao.php" method="post" style="border:2px solid black;padding:40px;border-radius:20px;">
-                <p>Artista:<input type="text" name="artista" id="artista" style="height:30px;border-radius:10px;margin-left:10px;"></p><br>
-                <p>Preco:<input type="text" name="preco" id="preco" style="height:30px;border-radius:10px;margin-left:10px;"></p><br>
-                <p>Gênero:<input type="text" name="genero" id="genero" style="height:30px;border-radius:10px;margin-left:10px;"></p>
+                <p>Artista:<input required type="text" name="artista" id="artista" style="height:30px;border-radius:10px;margin-left:10px;"></p><br>
+                <p>Preco:<input required type="text" name="preco" id="preco" style="height:30px;border-radius:10px;margin-left:10px;"></p><br>
+                <p>Gênero:<input required type="text" name="genero" id="genero" style="height:30px;border-radius:10px;margin-left:10px;"></p>
                 <button type="submit" name="button">Cadastrar</button>
             </form>
         </div>

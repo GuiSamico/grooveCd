@@ -13,6 +13,7 @@
     <div id="main_menu">
         <div class="logo_area">
             <a href="#"><img src="img/logo.png"></a>
+            <span id="spant">Loja de CD's</span>
         </div>
         <div class="inner_main_menu">
             <ul>
@@ -195,6 +196,11 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="footer">
+        <img src="img/favicon.png"><span>Groove CD</span>
+        <span id="email">higor_nathan@groovecd.com</span>
+        <span id="numero">(85) 985467125</span>
     </div>
 
 </body>

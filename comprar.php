@@ -30,20 +30,20 @@
 
         <div id="form" style="position:relative;left:200px;top:50px;">
             <form class="" action="cadastro-compra-funcao.php" method="post" style="border:2px solid black;padding:40px;border-radius:20px;">
-                <p>CD:<input type="text" name="tituloCd" id="tituloCd" value="<?php echo $artistaCd;?>" style="height:30px;border-radius:10px;margin-left:10px;"></p><br>
+                <p>CD:<input required type="text" name="tituloCd" id="tituloCd" value="<?php echo $artistaCd;?>" style="height:30px;border-radius:10px;margin-left:10px;"></p><br>
 
-                <p>Endereço:<input type="text" name="endereco" id="endereco" style="height:30px;border-radius:10px;margin-left:10px;"></p><br>
+                <p>Endereço:<input required type="text" name="endereco" id="endereco" style="height:30px;border-radius:10px;margin-left:10px;"></p><br>
 
-                <p>CPF do Cliente:<input type="text" name="cpf" id="cpf" value="<?php echo $cpfCliente;?>" style="height:30px;border-radius:10px;margin-left:10px;"></p><br>
+                <p>CPF do Cliente:<input required type="text" name="cpf" id="cpf" value="<?php echo $cpfCliente;?>" style="height:30px;border-radius:10px;margin-left:10px;"></p><br>
 
                 <p>Forma de Pagamento:
-                <select name="formaPagamento" id="formaPagamento" style="height:30px;border-radius:10px;margin-left:10px;">
+                <select required name="formaPagamento" id="formaPagamento" style="height:30px;border-radius:10px;margin-left:10px;">
                     <option value="dinheiro">Dinheiro</option>
                     <option value="cartao">Cartão</option>
                     <option value="boleto">Boleto</option>
                 </select></p><br>
 
-                <p>Valor Total:<input type="text" name="valor" id="valor" value="<?php echo $precoCd;?>" style="height:30px;border-radius:10px;margin-left:10px;"></p><br>
+                <p>Valor Total:<input required type="text" name="valor" id="valor" value="<?php echo $precoCd;?>" style="height:30px;border-radius:10px;margin-left:10px;"></p><br>
 
                 <button type="submit" name="button">Comprar</button>
             </form>
